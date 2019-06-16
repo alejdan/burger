@@ -1,0 +1,55 @@
+<style>
+    body {
+        background-color: yellow;
+        width: 500px;
+        margin: 0 auto;
+    }
+    #notEaten {
+
+    }
+
+</style>
+
+<img src="../public/assets/img/burger.png">
+<h3>Eat-Da-Burger!</h3>
+<div id="notEaten">
+    <ul>
+        {{#each burgers}}
+            {{#unless devoured}}
+                <li>
+   
+                    {{id}} {{burger_name}}
+                
+                    <button class="devour" data-id="{{id}}">
+                        Devour!
+                    </button>
+                </li>
+            {{/unless}}
+        {{/each}}
+
+    </ul>
+</div>
+<h3>Eaten Burgers</h3>
+<div id="eaten">
+    <ul>
+        
+        {{#each burgers}}
+            {{#if devoured}}
+                <li>
+                    {{id}} {{burger_name}}
+                </li>
+            {{/if}}
+        {{/each}}
+        
+    </ul>
+</div>
+<div>
+    <input type="textarea" id="burgerInput">
+
+    <button type="submit" class="submit">
+        Submit
+    </button>
+</div>
+<footer>
+    <p>Enter a burger you want to eat and Click the "Submit" button</p>
+</footer>
