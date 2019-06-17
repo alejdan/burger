@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
     $(".devour").on("click", function (event) {
         var id = $(this).data("id");
 
